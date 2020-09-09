@@ -39,5 +39,40 @@
     }
 }
 
+// Character component styles
+.character {
+    @apply w-full p-3;
+    @screen md {
+        @apply w-1/2 p-5;
+    }
+    .character-body {
+        @apply shadow-md h-full rounded-lg flex;
+    }
+    .character-image {
+        @apply w-3/6 h-full rounded-l-md object-contain;
+        @screen md {
+            @apply w-1/3;
+        }
+    }
+    .character-information {
+        @apply text-sm text-gray-700 px-4 py-2;
+        @screen lg {
+            @apply px-8 text-lg;
+        }
+        .character-name {
+            @apply font-semibold text-lg;
+            @screen lg {
+                @apply text-3xl;
+            }
+        }
+        .favorite-button {
+            @apply p-2;
+            &:focus {
+                @apply outline-none;
+            }
+        }
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
