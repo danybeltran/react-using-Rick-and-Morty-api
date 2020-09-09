@@ -17,7 +17,7 @@ export const Home = () => {
                     </p>
                     <br />
                     <div className="flex">
-                        <a rel="noopener noreferrer" target="_blank" className="github-link">
+                        <a href="https://github.com/danybeltran/react-using-Rick-and-Morty-api" rel="noopener noreferrer" target="_blank" className="github-link">
                             Github
                         </a>
                         <Link to="/characters/page/1" className="home-explore-button">
