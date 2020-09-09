@@ -16,7 +16,7 @@ export const Favorite = () => {
             setFavoriteCharacters(favorite);
         }
         getFavoriteCharacters(AllFavoriteCharactersId);
-    })
+    },[AllFavoriteCharactersId])
     return (
         <div className="favorite">
             <h3 className="characters-header">Your favorite characters</h3>
