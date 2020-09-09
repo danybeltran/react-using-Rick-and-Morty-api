@@ -739,6 +739,104 @@ video {
   }
 }
 
+// Home view styles
+.home {
+  display: block;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  @media (min-width: 768px) {
+    display: flex;
+  }
+  .home-text-container {
+    text-align: center;
+    padding: 0.75rem;
+    @media (min-width: 768px) {
+      text-align: left;
+
+      padding: 2.5rem;
+
+      width: 50%;
+    }
+    .home-header {
+      font-weight: 600;
+      font-size: 1.5rem;
+      @media (min-width: 768px) {
+        font-size: 2.25rem;
+      }
+      @media (min-width: 1024px) {
+        font-size: 4rem;
+      }
+      .page-name {
+        --text-opacity: 1;
+        color: #2c5282;
+        color: rgba(44, 82, 130, var(--text-opacity));
+        font-weight: 700;
+      }
+    }
+    .home-paragraph {
+      font-size: 1.25rem;
+      line-height: 1.625;
+      @media (min-width: 768px) {
+        font-size: 1.5rem;
+      }
+      @media (min-width: 1024px) {
+        font-size: 1.5rem;
+      }
+    }
+    .home-explore-button {
+      font-weight: 600;
+      border-radius: 0.5rem;
+      margin: 0.5rem;
+      --text-opacity: 1;
+      color: #2c5282;
+      color: rgba(44, 82, 130, var(--text-opacity));
+      padding: 1rem;
+      font-size: 0.875rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      &:focus {
+        outline: 0;
+      }
+      @media (min-width: 768px) {
+        font-size: 1.25rem;
+      }
+    }
+    .github-link {
+      font-weight: 600;
+      --bg-opacity: 1;
+      background-color: #2c5282;
+      background-color: rgba(44, 82, 130, var(--bg-opacity));
+      border-radius: 0.5rem;
+      margin: 0.5rem;
+      --text-opacity: 1;
+      color: #fff;
+      color: rgba(255, 255, 255, var(--text-opacity));
+      padding: 1rem;
+      font-size: 0.875rem;
+      @media (min-width: 768px) {
+        font-size: 1.25rem;
+      }
+      &:focus {
+        outline: 0;
+      }
+      &:hover {
+        --bg-opacity: 1;
+        background-color: #2b6cb0;
+        background-color: rgba(43, 108, 176, var(--bg-opacity));
+      }
+      &:active {
+        --bg-opacity: 1;
+        background-color: #2a4365;
+        background-color: rgba(42, 67, 101, var(--bg-opacity));
+      }
+    }
+  }
+  .home-image-container {
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
+}
+
 .container {
   width: 100%;
 }

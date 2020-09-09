@@ -74,5 +74,70 @@
     }
 }
 
+// Home view styles
+.home {
+    @apply block shadow-md;
+    @screen md {
+        @apply flex;
+    }
+    .home-text-container {
+        @apply text-center p-3;
+        @screen md {
+            @apply text-left p-10 w-1/2;
+        }
+        .home-header {
+            @apply font-semibold text-2xl;
+            @screen md {
+                @apply text-4xl;
+            }
+            @screen lg {
+                @apply text-6xl;
+            }
+            .page-name {
+                @apply text-blue-800 font-bold;
+            }
+        }
+        .home-paragraph {
+            @apply text-xl leading-relaxed;
+            @screen md {
+                @apply text-2xl;
+            }
+            @screen lg {
+                @apply text-2xl;
+            }
+        }
+        .home-explore-button {
+            @apply font-semibold rounded-lg m-2 text-blue-800 p-4 text-sm shadow-md;
+            &:focus {
+                @apply outline-none;
+            }
+            @screen md {
+                @apply text-xl;
+            }
+        }
+        .github-link {
+            @apply font-semibold bg-blue-800 rounded-lg m-2 text-white p-4 text-sm;
+            @screen md {
+                @apply text-xl;
+            }
+            &:focus {
+                @apply outline-none;
+            }
+            &:hover {
+                @apply bg-blue-700;
+            }
+            &:active {
+                @apply bg-blue-900;
+            }
+        }
+    }
+    .home-image-container {
+        @apply w-full;
+        @screen md {
+            @apply w-1/2;
+        }
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
