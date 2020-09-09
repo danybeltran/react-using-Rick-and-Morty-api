@@ -11,7 +11,7 @@
 .navigation {
     @apply flex shadow-sm;
     .image-container {
-        @apply m-1 p-2 px-4 py-4;
+        @apply p-2 px-4 py-4;
         .main-logo {
             @apply hidden object-center w-20;
             @screen md {
@@ -19,7 +19,7 @@
             }
         }
         .small-logo {
-            @apply block w-12 w-12 px-3 py-2;
+            @apply block w-12 w-12 px-3 py-1;
             @screen md {
                 @apply hidden w-10;
             }

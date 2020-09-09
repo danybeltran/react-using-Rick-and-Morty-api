@@ -616,7 +616,6 @@ video {
   display: flex;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   .image-container {
-    margin: 0.25rem;
     padding: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -636,8 +635,8 @@ video {
       width: 3rem;
       padding-left: 0.75rem;
       padding-right: 0.75rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
       @media (min-width: 768px) {
         display: none;
 
