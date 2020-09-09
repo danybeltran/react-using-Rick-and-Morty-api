@@ -1,0 +1,43 @@
+@tailwind base;
+.navigation .pagination-button {
+    @apply bg-blue-600 text-white m-2 p-2 rounded-md shadow;
+}
+
+.characters-header {
+    @apply text-xl text-gray-800 font-semibold;
+}
+
+// Navigation component styles
+.navigation {
+    @apply flex shadow-sm;
+    .image-container {
+        @apply m-1 p-2 px-4 py-4;
+        .main-logo {
+            @apply hidden object-center w-20;
+            @screen md {
+                @apply block;
+            }
+        }
+        .small-logo {
+            @apply block w-12 w-12 px-3 py-2;
+            @screen md {
+                @apply hidden w-10;
+            }
+        }
+    }
+    .navigation-link {
+        @apply rounded-md m-1 py-4 px-4 text-blue-700 font-semibold;
+        &:hover {
+            @apply text-blue-800 shadow-md;
+        }
+    }
+    .navigation-favorite-link {
+        @apply rounded-md py-5 px-6 m-1 text-blue-700 font-semibold;
+        &:hover {
+            @apply text-blue-800 shadow-md;
+        }
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
