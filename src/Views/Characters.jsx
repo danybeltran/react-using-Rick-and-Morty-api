@@ -81,7 +81,7 @@ export const Characters = () => {
             <br />
             <div className="characters-body">
 
-                <button onClick={() => setUserWillSearch(!userWillSearch)} className="pagination-button">Search</button>
+                <button onClick={() => setUserWillSearch(!userWillSearch)} className="search-button">Search</button>
 
                 {
                     userWillSearch ?

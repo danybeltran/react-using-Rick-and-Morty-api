@@ -854,10 +854,23 @@ video {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     text-align: center;
-    .pagination-button {
+    .search-button {
       --bg-opacity: 1;
       background-color: #4299e1;
       background-color: rgba(66, 153, 225, var(--bg-opacity));
+      --text-opacity: 1;
+      color: #fff;
+      color: rgba(255, 255, 255, var(--text-opacity));
+      font-size: 1.125rem;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 0.375rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+    .pagination-button {
+      --bg-opacity: 1;
+      background-color: #2b6cb0;
+      background-color: rgba(43, 108, 176, var(--bg-opacity));
       --text-opacity: 1;
       color: #fff;
       color: rgba(255, 255, 255, var(--text-opacity));
@@ -885,6 +898,67 @@ video {
     text-align: center;
     width: 100%;
     padding-top: 5rem;
+  }
+}
+
+// Favorite view
+.favorite {
+  margin: 1.25rem;
+  @media (min-width: 768px) {
+    margin: 3rem;
+  }
+  .characters-header {
+    font-size: 1.25rem;
+    --text-opacity: 1;
+    color: #2d3748;
+    color: rgba(45, 55, 72, var(--text-opacity));
+    font-weight: 600;
+  }
+  .favorite-b {
+    flex-wrap: wrap;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+    .container-no-results {
+      font-size: 1.5rem;
+      width: 100%;
+      text-align: center;
+      padding-top: 5rem;
+      .no-results-image {
+        width: 5rem;
+        margin: auto;
+      }
+      .no-results-text {
+        width: 100%;
+        --text-opacity: 1;
+        color: #2d3748;
+        color: rgba(45, 55, 72, var(--text-opacity));
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.not-found {
+  padding: 1.5rem;
+  text-align: center;
+  .error-header {
+    font-size: 3rem;
+    padding: 0.5rem;
+  }
+  .error-paragraph {
+    font-size: 1.125rem;
+    padding: 0.5rem;
+  }
+  .error-home-link {
+    --bg-opacity: 1;
+    background-color: #4299e1;
+    background-color: rgba(66, 153, 225, var(--bg-opacity));
+    padding: 1rem;
+    --text-opacity: 1;
+    color: #fff;
+    color: rgba(255, 255, 255, var(--text-opacity));
+    border-radius: 0.25rem;
   }
 }
 
