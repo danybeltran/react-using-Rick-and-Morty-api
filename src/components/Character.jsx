@@ -4,7 +4,7 @@ import { HeartLogo, Liked } from "./HeartLogo";
 export const Character = ({ props, isFavorite }) => {
 
     // Favorite characters are saved in the localstorage
-    var [favoriteList] = useState(JSON.parse(localStorage["favorite"]) | []);
+    var [favoriteList] = useState(JSON.parse(localStorage["favorite"]));
     var [favorite] = useState(isFavorite)
 
 
@@ -43,7 +43,7 @@ export const Character = ({ props, isFavorite }) => {
                         <p className="character-name">{props.name}</p>
                         <p>Species: {props.species}</p>
                         <p>Episodes: {props.episode.length}</p>
-                        <p>Status:<span className={CharacterStatus}>{status}</span></p>
+                        <p>Status:<span className={CharacterStatus}> {status}</span></p>
                         <br />
 
                         {/* {// Render a white heart if not favorite and filled if it is} */}
