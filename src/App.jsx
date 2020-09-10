@@ -84,6 +84,9 @@ function App() {
         getCharacters();
     }, [page, searchQuery, userWillSearch]);
 
+
+    let updateSearchQuery = (e) => setSearchQuery(e.target.value);
+
     return (
         <AppContext.Provider value={{
             favoriteCharacters,
@@ -95,7 +98,7 @@ function App() {
             page,
             setPage,
             searchQuery,
-            setSearchQuery,
+            updateSearchQuery,
             userWillSearch,
             setUserWillSearch
         }}>

@@ -2,6 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Character } from "../components/Character";
 import { AppContext } from "../Context";
+import { SearchButton } from "../components/CharactersView/SearchButton";
+import { SearchInput } from "../components/CharactersView/SearchInput";
+import { Pagination } from "../components/CharactersView/Pagination";
+import { MappedCharacters } from "../components/CharactersView/MappedCharacters";
 
 export const Characters = () => {
 
@@ -9,9 +13,7 @@ export const Characters = () => {
 
     const {
         characters,
-        pages,
         setPage,
-        searchQuery,
         setSearchQuery,
         userWillSearch,
         setUserWillSearch
@@ -23,35 +25,15 @@ export const Characters = () => {
         setPage(page);
     }, [page])
 
-    let setSearchTrue = () => setUserWillSearch(!userWillSearch);
-
-    let updateQuery = (e) => setSearchQuery(e.target.value);
-
     return (
         <div className="characters">
             <h3 className="characters-header">All characters</h3>
             <br />
             <div className="characters-body">
-                <div className="pagination">
-
-                    <button onClick={() => setUserWillSearch(!userWillSearch)} className="search-button">Search</button>
-
-                    {
-                        userWillSearch ?
-                            <>
-                                <input type="text" value={searchQuery} onChange={updateQuery} className="search-input" placeholder="e.g. Rick Sanchez" />
-                            </>
-                            :
-                            <>
-                                <Link to={"/characters/page/" + pages.prev ? pages.prev : "1"} className="pagination-button">Prev.</Link>
-                                <span>Page {page} of 34</span>
-                                <Link to={"/characters/page/" + pages.next ? pages.next : "34"} className="pagination-button">Next</Link>
-                            </>
-                    }
-                </div>
+                <Pagination />
             </div>
             <div className="characters-result">
-                {characters.map((character) => <Character {...character} userWillSearch />)}
+                <MappedCharacters/>
                 {
                     // If the search gave no results
                     (characters.length === 0 && userWillSearch) && (
