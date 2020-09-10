@@ -11,6 +11,9 @@ function App() {
     const [characters, setCharacters] = useState([]);
     const [favoriteCharacters, setFavoriteCharacters] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+
+    const [fetchFavoriteDone, setFetchFavoriteDone] = useState(false);
+
     const [pages, setPages] = useState({
         prev: "",
         next: ""
@@ -27,16 +30,15 @@ function App() {
         setLocalStorageItemIfUndefined();
     }, []);
 
-
-
     // Set favorite characters
 
     useEffect(() => {
-        var charactersIds = localStorage["favorite"].replace(/\[|\]/g, "") // e.g. 1,4,6,2
+        var charactersIds = localStorage["favorite"].replace(/\[|\]/g, ",") // e.g. 1,4,6,2
         const getFavoriteCharacters = async (ids) => {
             var favorite = await fetch("https://rickandmortyapi.com/api/character/" + ids + ",");
             favorite = await favorite.json();
             setFavoriteCharacters(favorite);
+            setFetchFavoriteDone(true);
         }
         getFavoriteCharacters(charactersIds);
     }, []);
@@ -99,7 +101,8 @@ function App() {
             setPage,
             updateSearchQuery,
             userWillSearch,
-            setUserWillSearch
+            setUserWillSearch,
+            fetchFavoriteDone
         }}>
             <AppContext.Consumer>
                 {(value) => {

@@ -1,7 +1,10 @@
 import React from "react";
-import { FavoriteContainer } from "../components/Favorite/FavoriteContainer";
-import { FavoriteCharactersHeader } from "../components/Favorite/FavoriteCharactersHeader";
-import { FavoriteCharacters } from "../components/Favorite/FavoriteCharacters";
+import {
+    FavoriteContainer,
+    FavoriteCharactersHeader,
+    FavoriteCharacters,
+    NoResults
+} from "../components/Favorite/";
 
 export const Favorite = () => {
     return (
@@ -9,6 +12,7 @@ export const Favorite = () => {
             <FavoriteCharactersHeader text="Your favorite characters" />
             <br />
             <FavoriteCharacters />
+            <NoResults />
         </FavoriteContainer>
     )
 }

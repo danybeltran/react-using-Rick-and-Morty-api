@@ -1,7 +1,5 @@
 import React from "react";
-import { CharacterImage } from "./Character/CharacterImage"
-import { FavoriteButton } from "./Character/FavoriteButton";
-import { InformationTable } from "./Character/InformationTable";
+import { CharacterImage, FavoriteButton, InformationTable } from "./Character/";
 
 export const Character = (props, { isFavorite }) => {
 
