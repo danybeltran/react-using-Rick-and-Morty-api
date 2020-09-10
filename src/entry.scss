@@ -7,8 +7,18 @@
     @apply text-xl text-gray-800 font-semibold;
 }
 
+.prtc {
+    position: fixed;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
 // Navigation component styles
 .navigation {
+    @apply bg-white;
     @apply flex shadow-sm;
     .image-container {
         @apply p-2 px-4 py-4;
@@ -46,6 +56,7 @@
         @apply w-1/2 p-5;
     }
     .character-body {
+        background-color: white;
         @apply shadow-md h-full rounded-lg flex;
     }
     .character-image {

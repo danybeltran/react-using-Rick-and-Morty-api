@@ -6,6 +6,9 @@ import { Characters } from './Views/Characters';
 import { Favorite } from './Views/Favorite';
 import { NotFound } from './Views/NotFound';
 import { AppContext } from './Context';
+import particle from "./particle.js";
+
+import Particles from "react-particles-js"
 
 function App() {
     const [characters, setCharacters] = useState([]);
@@ -110,6 +113,7 @@ function App() {
                 {(value) => {
                     return (
                         <div>
+                            <Particles className="prtc" params={JSON.parse(particle)} />
                             <Navigation />
                             <Switch>
                                 <Route exact path="/" component={Home} />
