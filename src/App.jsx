@@ -16,6 +16,8 @@ function App() {
     const [searchQuery, setSearchQuery] = useState("");
     const [clicked, setClicked] = useState(0);
     const [fetchFavoriteDone, setFetchFavoriteDone] = useState(false);
+    const [darkTheme, setDarkTheme] = useState(Boolean(localStorage["theme"]));
+    const [changedTheme, setChangedTheme] = useState(0);
 
     const [pages, setPages] = useState({
         prev: "",
@@ -92,6 +94,19 @@ function App() {
 
     let updateSearchQuery = (e) => setSearchQuery(e.target.value);
 
+    let changeTheme = () => {
+        if (darkTheme) {
+            localStorage.removeItem("theme");
+        } else {
+            localStorage["theme"] = true;
+        }
+        setChangedTheme(changedTheme + 1)
+    };
+
+    useEffect(() => {
+        setDarkTheme(Boolean(localStorage["theme"]));
+    }, [changedTheme])
+
     return (
         <AppContext.Provider value={{
             favoriteCharacters,
@@ -107,12 +122,14 @@ function App() {
             setUserWillSearch,
             fetchFavoriteDone,
             clicked,
-            setClicked
+            setClicked,
+            darkTheme,
+            changeTheme
         }}>
             <AppContext.Consumer>
                 {(value) => {
                     return (
-                        <div>
+                        <div className={value.darkTheme ? "dark" : ""}>
                             <Particles className="prtc" params={JSON.parse(particle)} />
                             <Navigation />
                             <Switch>

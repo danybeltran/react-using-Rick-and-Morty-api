@@ -7,15 +7,6 @@
     @apply text-xl text-gray-800 font-semibold;
 }
 
-.prtc {
-    position: fixed;
-    z-index: -2;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-}
-
 // Navigation component styles
 .navigation {
     @apply bg-white;
@@ -218,6 +209,43 @@
     }
     .error-home-link {
         @apply bg-blue-500 p-4 text-white rounded;
+    }
+}
+
+.prtc {
+    position: fixed;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.dark {
+    .prtc {
+        @apply bg-gray-900;
+    }
+    @apply bg-none;
+    .navigation {
+        @apply text-white bg-gray-900;
+    }
+    .character .character-body {
+        @apply shadow-lg;
+    }
+    .character-body {
+        @apply bg-gray-800;
+    }
+    .search-input {
+        @apply bg-gray-700;
+    }
+    * {
+        @apply text-white;
+    }
+    .no-results-text {
+        @apply text-white;
+    }
+    .characters-header {
+        @apply text-white;
     }
 }
 
