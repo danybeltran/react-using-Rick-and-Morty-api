@@ -11,7 +11,7 @@ function App() {
     const [characters, setCharacters] = useState([]);
     const [favoriteCharacters, setFavoriteCharacters] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
-
+    const [clicked, setClicked] = useState(0);
     const [fetchFavoriteDone, setFetchFavoriteDone] = useState(false);
 
     const [pages, setPages] = useState({
@@ -41,7 +41,7 @@ function App() {
             setFetchFavoriteDone(true);
         }
         getFavoriteCharacters(charactersIds);
-    }, []);
+    }, [clicked, setClicked]);
 
     // for searching characters
 
@@ -102,7 +102,9 @@ function App() {
             updateSearchQuery,
             userWillSearch,
             setUserWillSearch,
-            fetchFavoriteDone
+            fetchFavoriteDone,
+            clicked,
+            setClicked
         }}>
             <AppContext.Consumer>
                 {(value) => {

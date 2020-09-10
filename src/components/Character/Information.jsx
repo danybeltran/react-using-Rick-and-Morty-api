@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { InformationTable } from "./InformationTable";
 import { FavoriteButton } from "./FavoriteButton";
 
 export const Information = (props) => {
-    const [favoriteList] = useState(JSON.parse(localStorage["favorite"]));
-
 
     return (
         <div className="character-information">
