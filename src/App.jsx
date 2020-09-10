@@ -8,7 +8,15 @@ import { NotFound } from './Views/NotFound';
 import { AppContext } from './Context';
 
 function App() {
+    const [characters, setCharacters] = useState([]);
     const [favoriteCharacters, setFavoriteCharacters] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [pages, setPages] = useState({
+        prev: "",
+        next: ""
+    });
+    const [page, setPage] = useState("1");
+    const [userWillSearch, setUserWillSearch] = useState(false);
 
     useEffect(() => {
         function setLocalStorageItemIfUndefined() {
@@ -18,6 +26,8 @@ function App() {
         }
         setLocalStorageItemIfUndefined();
     }, []);
+
+
 
     // Set favorite characters
 
@@ -29,21 +39,81 @@ function App() {
             setFavoriteCharacters(favorite);
         }
         getFavoriteCharacters(charactersIds);
-    }, [favoriteCharacters])
+    }, []);
+
+    // for searching characters
+
+    useEffect(() => {
+        const getCharacters = async (_page) => {
+
+            // This will be executed first
+            if (!userWillSearch) {
+                const allInformation = await fetch("https://rickandmortyapi.com/api/character?page=" + page);
+
+                const information = await allInformation.json();
+
+                // get previous and next page and set them
+                var { prev, next } = information.info;
+
+
+                // just get the next page number to use in Prev - Next buttons spliting at the `=`
+
+                setPages({
+                    prev: String(prev).split("=")[1],
+                    next: String(next).split("=")[1]
+                });
+                // get array of characters and set them
+                const { results } = information;
+
+                setCharacters(results)
+            }
+
+            // Will run when the user clicks the `Search` button
+            else {
+                const allInformation = await fetch("https://rickandmortyapi.com/api/character?name=" + searchQuery);
+
+                const information = await allInformation.json();
+
+                // get array of characters and set them
+                const { results } = information;
+
+                // Set an empty array if failed
+                setCharacters(!results ? [] : results)
+            }
+        }
+        getCharacters();
+    }, [page, searchQuery, userWillSearch]);
 
     return (
         <AppContext.Provider value={{
-            favoriteCharacters
+            favoriteCharacters,
+            searchQuery,
+            setSearchQuery,
+            characters,
+            pages,
+            setPages,
+            page,
+            setPage,
+            searchQuery,
+            setSearchQuery,
+            userWillSearch,
+            setUserWillSearch
         }}>
-            <div>
-                <Navigation />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/characters/page/:page" component={Characters} />
-                    <Route exact path="/favorite" component={Favorite} />
-                    <Route exact path="*" component={NotFound} />
-                </Switch>
-            </div>
+            <AppContext.Consumer>
+                {(value) => {
+                    return (
+                        <div>
+                            <Navigation />
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route exact path="/characters/page/:page" component={Characters} />
+                                <Route exact path="/favorite" component={Favorite} />
+                                <Route exact path="*" component={NotFound} />
+                            </Switch>
+                        </div>
+                    )
+                }}
+            </AppContext.Consumer>
         </AppContext.Provider>
     );
 }

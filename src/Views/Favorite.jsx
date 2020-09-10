@@ -1,29 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Character } from "../components/Character";
-import MortyFace from "../img/morty-no-favorites.png";
-import { AppContext } from "../Context";
+import React from "react";
+import { FavoriteContainer } from "../components/Favorite/FavoriteContainer";
+import { FavoriteCharactersHeader } from "../components/Favorite/FavoriteCharactersHeader";
+import { FavoriteCharacters } from "../components/Favorite/FavoriteCharacters";
 
 export const Favorite = () => {
-
-    const {favoriteCharacters} = useContext(AppContext);
-
     return (
-        <div className="favorite">
-            <h3 className="characters-header">Your favorite characters</h3>
+        <FavoriteContainer>
+            <FavoriteCharactersHeader text="Your favorite characters" />
             <br />
-            <div className="favorite-b">
-                {
-                    typeof favoriteCharacters.map !== "undefined" ?
-                        favoriteCharacters.map((character) => <Character {...character} isFavorite={true} key={character.id} />)
-                        :
-                        <>
-                            <div className="container-no-results">
-                                <img src={MortyFace} className="no-results-image" alt="" />
-                                <h3 className="no-results-text">List is empty</h3>
-                            </div>
-                        </>
-                }
-            </div>
-        </div>
+            <FavoriteCharacters />
+        </FavoriteContainer>
     )
 }

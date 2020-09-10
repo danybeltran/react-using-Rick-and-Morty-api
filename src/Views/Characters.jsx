@@ -1,67 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Character } from "../components/Character";
+import { AppContext } from "../Context";
 
 export const Characters = () => {
 
-    const [characters, setCharacters] = useState([]);
+    const context = useContext(AppContext);
 
+    const {
+        characters,
+        pages,
+        setPage,
+        searchQuery,
+        setSearchQuery,
+        userWillSearch,
+        setUserWillSearch
+    } = useContext(AppContext);
 
-    // for searching characters
-
-    const [userWillSearch, setUserWillSearch] = useState(false);
-
-    const [searchQuery, setSearchQuery] = useState("");
-
-    // set some default values for previous and next pages
-    const [pages, setPages] = useState({
-        prev: "",
-        next: ""
-    });
-
-    // the correponding `page` param for the api
     const { page } = useParams();
 
     useEffect(() => {
-        const getCharacters = async (_page) => {
+        setPage(page);
+    }, [page])
 
-            // This will be executed first
-            if (!userWillSearch) {
-                const allInformation = await fetch("https://rickandmortyapi.com/api/character?page=" + page);
-
-                const information = await allInformation.json();
-
-                // get previous and next page and set them
-                var { prev, next } = information.info;
-
-
-                // just get the next page number to use in Prev - Next buttons spliting at the `=`
-
-                setPages({
-                    prev: String(prev).split("=")[1],
-                    next: String(next).split("=")[1]
-                });
-                // get array of characters and set them
-                const { results } = information;
-
-                setCharacters(results)
-            }
-
-            // Will run when the user clicks the `Search` button
-            else {
-                const allInformation = await fetch("https://rickandmortyapi.com/api/character?name=" + searchQuery);
-
-                const information = await allInformation.json();
-
-                // get array of characters and set them
-                const { results } = information;
-
-                // Set an empty array if failed
-                setCharacters(!results ? [] : results)
-            }
-        }
-        getCharacters();
-    }, [page, searchQuery, userWillSearch]);
+    let setSearchTrue = () => setUserWillSearch(!userWillSearch);
 
     let updateQuery = (e) => setSearchQuery(e.target.value);
 
