@@ -97,7 +97,6 @@ function App() {
             setPages,
             page,
             setPage,
-            searchQuery,
             updateSearchQuery,
             userWillSearch,
             setUserWillSearch
