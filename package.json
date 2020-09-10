@@ -33,7 +33,6 @@
         ]
     },
     "devDependencies": {
-        "jest": "^26.4.2",
         "react-test-renderer": "^16.13.1"
     }
 }
