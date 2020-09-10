@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Character } from "../components/Character";
 import MortyFace from "../img/morty-no-favorites.png";
@@ -36,4 +37,19 @@ export const Favorite = () => {
             </div>
         </div>
     )
+=======
+import React from "react";
+import { FavoriteContainer } from "../components/Favorite/FavoriteContainer";
+import { FavoriteCharactersHeader } from "../components/Favorite/FavoriteCharactersHeader";
+import { FavoriteCharacters } from "../components/Favorite/FavoriteCharacters";
+
+export const Favorite = () => {
+    return (
+        <FavoriteContainer>
+            <FavoriteCharactersHeader text="Your favorite characters" />
+            <br />
+            <FavoriteCharacters />
+        </FavoriteContainer>
+    )
+>>>>>>> 32ef5e00d4735d6783d785b48d2330430e388d02
 }
