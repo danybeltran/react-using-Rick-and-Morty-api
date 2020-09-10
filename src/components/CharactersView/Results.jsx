@@ -5,5 +5,5 @@ export const Results = ({ children }) => {
         <div className="characters-result">
             {children}
         </div>
-    )
+    );
 }
