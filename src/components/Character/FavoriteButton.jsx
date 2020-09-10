@@ -38,9 +38,21 @@ export const FavoriteButton = ({ id }) => {
 
     let isFavorite = favoriteList.includes(id)
     return (
-        <button className="favorite-button" onClick={addOrRemoveToFavoriteList} title={(isFavorite ? "Remove from" : "Add to") + " favorite"}>
+        <button className="favorite-button flex" onClick={addOrRemoveToFavoriteList} title={(isFavorite ? "Remove from" : "Add to") + " favorite"}>
             {/* {// Render a white heart if not favorite and filled if it is} */}
-            {isFavorite ? <Liked /> : <HeartLogo />}
+            {isFavorite ?
+                <>
+                    <Liked />
+                    <span className="pl-3 text-sm md:text-lg">
+                        Remove
+                </span>
+                </> :
+                <>
+                    <HeartLogo />
+                    <span className="pl-3 text-sm md:text-lg">
+                        Favorite
+                </span>
+                </>}
         </button>
     )
 }
