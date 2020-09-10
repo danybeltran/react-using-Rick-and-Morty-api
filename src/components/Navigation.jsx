@@ -25,7 +25,7 @@ export const Navigation = () => {
             <Link to="/favorite" className="navigation-favorite-link" title="Favorite">
                 <HeartLogo />
             </Link>
-            <Link onClick={changeTheme} className="navigation-favorite-link" title="Change theme">
+            <Link to="#" onClick={changeTheme} className="navigation-favorite-link" title="Change theme">
                 <ThemeLogo />
             </Link>
         </div>

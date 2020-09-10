@@ -9,6 +9,6 @@ export const MappedCharacters = () => {
 
         // No character limit when user is searching
 
-        return characterIndex < (userWillSearch ? 671 : 10) && <Character {...character} />
+        return characterIndex < (userWillSearch ? 671 : 10) && <Character {...character} key={character.id} />
     })
 }
