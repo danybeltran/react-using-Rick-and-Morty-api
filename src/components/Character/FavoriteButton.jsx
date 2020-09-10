@@ -3,16 +3,31 @@ import { Liked, HeartLogo } from "../HeartLogo";
 import { AppContext } from "../../Context";
 
 export const FavoriteButton = ({ id }) => {
-    const {
-        clicked,
-        setClicked
-    } = useContext(AppContext);
+
+    if (typeof localStorage["favorite"] == "undefined") {
+        localStorage["favorite"] = "[]"
+    }
+
+    const context = useContext(AppContext);
+
+    var clicked, setClicked;
+
+    if (typeof context === "undefined") {
+        clicked = 0;
+        setClicked = function (newValue) {
+            clicked++
+        }
+    }
+    else {
+        clicked = context.clicked;
+        setClicked = context.setClicked;
+    }
     // Favorite characters are saved in the localstorage
     var [favoriteList, setFavoriteList] = useState(JSON.parse(localStorage["favorite"]));
 
 
     useEffect(() => {
-        setFavoriteList(JSON.parse(localStorage["favorite"]))
+        setFavoriteList(JSON.parse(localStorage["favorite"]));
     }, [clicked])
 
     let addOrRemoveToFavoriteList = () => {

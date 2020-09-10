@@ -7,7 +7,7 @@
         "start": "tailwindcss build src/entry.scss -o src/tailwind.scss && react-scripts start",
         "build": "tailwindcss build src/entry.scss -o src/tailwind.scss && react-scripts build",
         "tail": "tailwindcss build src/entry.scss -o src/tailwind.scss",
-        "test": ""
+        "test": "react-scripts test"
     },
     "keywords": [],
     "author": "",
@@ -34,6 +34,7 @@
         ]
     },
     "devDependencies": {
+        "jest-fix-undefined": "^0.1.2",
         "react-test-renderer": "^16.13.1"
     }
 }

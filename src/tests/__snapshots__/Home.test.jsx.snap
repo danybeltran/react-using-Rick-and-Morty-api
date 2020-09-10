@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render the Home screen 1`] = `
+<div>
+  <div
+    className="home"
+  >
+    <div
+      className="home-text-container"
+    >
+      <h2
+        className="home-header"
+      >
+        Welcome to the 
+        <span
+          className="page-name"
+        >
+          Rick&MortyPedia
+        </span>
+      </h2>
+      <br />
+      <p
+        className="home-paragraph"
+      >
+        Here you will find information about characters, episodes they appear on, status, etc.
+        <br />
+      </p>
+      <br />
+      <div
+        className="flex"
+      >
+        <a
+          className="github-link"
+          href="https://github.com/danybeltran/react-using-Rick-and-Morty-api"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          className="home-explore-button"
+          href="/characters/page/1"
+          onClick={[Function]}
+        >
+          Explore
+        </a>
+      </div>
+    </div>
+    <div
+      className="home-image-container"
+    >
+      <img
+        alt=""
+        src="rick-and-morty-together.png"
+      />
+    </div>
+  </div>
+</div>
+`;

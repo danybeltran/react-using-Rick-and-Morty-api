@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render a 404 error screen 1`] = `
+<div
+  className="not-found"
+>
+  <h3
+    className="error-header"
+  >
+    That's a 404 error
+  </h3>
+  <p
+    className="error-paragraph"
+  >
+    The page you requested doesn't exist.
+  </p>
+  <br />
+  <a
+    className="error-home-link"
+    href="/"
+    onClick={[Function]}
+  >
+    Go home
+  </a>
+</div>
+`;

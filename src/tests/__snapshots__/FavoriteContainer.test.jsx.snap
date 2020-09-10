@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render a 'h1' with text 'A test' and a 'p' with text 'Paragraph' 1`] = `
+<div
+  className="favorite"
+>
+  <h1>
+    A test
+  </h1>
+  <p>
+    Paragraph
+  </p>
+</div>
+`;

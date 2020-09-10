@@ -3,8 +3,8 @@ import { MappedFavoriteCharacters } from "../Favorite/MappedFavoriteCharacters";
 export const FavoriteCharacters = () => {
 
     return (
-        <div className="favorite-b">
+        <div className="favorite-b flex">
             <MappedFavoriteCharacters />
         </div>
     )
-}   
+}

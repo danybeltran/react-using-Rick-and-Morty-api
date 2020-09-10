@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Rick Sanchez character information 1`] = `
+<div
+  className="character"
+>
+  <div
+    className="character-body"
+  >
+    <img
+      alt="Rick Sanchez picture"
+      className="character-image"
+      src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    />
+    <div
+      className="character-information"
+    >
+      <div
+        className="informationTable"
+      >
+        <p
+          className="character-name"
+        >
+          Rick Sanchez
+        </p>
+        <p>
+          Species: 
+        </p>
+        <p>
+          Episodes: 
+          2
+        </p>
+        <p>
+          Status:
+          <span
+            className="text-green-600"
+          >
+             
+            Alive
+          </span>
+        </p>
+      </div>
+      <br />
+      <button
+        className="favorite-button flex"
+        onClick={[Function]}
+        title="Add to favorite"
+      >
+        <svg
+          className="mt-1 bi bi-heart"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+            fillRule="evenodd"
+          />
+        </svg>
+        <span
+          className="pl-3 text-sm md:text-lg"
+        >
+          Favorite
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
