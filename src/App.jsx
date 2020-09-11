@@ -61,7 +61,7 @@ function App() {
                 const information = await allInformation.json();
 
                 // get previous and next page and set them
-                var { prev, next } = information.info;
+                var {  next } = information.info;
 
 
                 // just get the next page number to use in Prev - Next buttons spliting at the `=`

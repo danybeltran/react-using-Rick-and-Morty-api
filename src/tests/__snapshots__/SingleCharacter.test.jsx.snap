@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render information about Rick Sanchez (id 1) 1`] = `
+<div>
+  <div
+    className="single-character p-12 md:flex text-gray-700"
+  >
+    <div
+      className="single-character-image md:w-1/2"
+    >
+      <img
+        alt=""
+        className="mx-auto md:ml-auto rounded-md shadow-md md:w-1/2 md:mr-3 h-100 object-fill"
+        src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+      />
+    </div>
+    <br />
+    <div
+      className="single-character-information md:px-6"
+    >
+      <h4
+        className="single-character-name text-2xl text-center md:text-left"
+      >
+        Rick Sanchez
+      </h4>
+      <p
+        className="single-character-info-paragraph"
+      >
+        <span
+          className="font-semibold"
+        >
+          Human
+           - 
+          <span
+            className="text-green-600"
+          >
+            Alive
+          </span>
+        </span>
+      </p>
+      <p
+        className="single-character-info-paragraph"
+      >
+        From: 
+        Earth
+      </p>
+      <p
+        className="single-character-info-paragraph"
+      >
+        Living in: 
+        Earth (Replacement Dimension)
+      </p>
+      <br />
+      <p
+        className="single-character-info-paragraph"
+      >
+        <span
+          className="text-sm"
+        >
+          To date, 
+          Rick Sanchez
+           appears in 
+          41
+           
+          Episodes
+        </span>
+      </p>
+    </div>
+    <br />
+  </div>
+</div>
+`;

@@ -18,11 +18,13 @@ exports[`Should render Rick Sanchez character information 1`] = `
       <div
         className="informationTable"
       >
-        <p
+        <a
           className="character-name"
+          href="/character/2"
+          onClick={[Function]}
         >
           Rick Sanchez
-        </p>
+        </a>
         <p>
           Species: 
           Human

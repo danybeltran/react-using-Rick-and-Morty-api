@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
-export const SingleCharacter = () => {
+export const SingleCharacter = ({ testData = {
+    origin: {},
+    location:{},
+    episode:[]
+} }) => {
 
-    const [character, setCharacter] = useState({
+    const [character, setCharacter] = useState(testData.name ? testData : {
         origin: {},
         location: {},
         episode: []
@@ -19,7 +23,7 @@ export const SingleCharacter = () => {
             setCharacter(data);
             console.log(data)
         }
-        fetchCharacterInformation(id)
+        fetchCharacterInformation(id);
     }, [id]);
 
     let CharacterStatus = character.status === "Alive" ? "text-green-600" :
