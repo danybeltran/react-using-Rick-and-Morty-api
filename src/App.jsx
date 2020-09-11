@@ -9,6 +9,7 @@ import { AppContext } from './Context';
 import particle from "./particle.js";
 
 import Particles from "react-particles-js"
+import { SingleCharacter } from './Views/SingleCharacter';
 
 function App() {
     const [characters, setCharacters] = useState([]);
@@ -135,6 +136,7 @@ function App() {
                             <Switch>
                                 <Route exact path="/" component={Home} />
                                 <Route exact path="/characters/page/:page" component={Characters} />
+                                <Route exact path="/character/:id" component={SingleCharacter} />
                                 <Route exact path="/favorite" component={Favorite} />
                                 <Route exact path="*" component={NotFound} />
                             </Switch>
