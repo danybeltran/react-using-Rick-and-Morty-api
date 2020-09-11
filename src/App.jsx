@@ -21,8 +21,8 @@ function App() {
     const [changedTheme, setChangedTheme] = useState(0);
 
     const [pages, setPages] = useState({
-        prev: "",
-        next: ""
+        prev: "0",
+        next: "1"
     });
     const [page, setPage] = useState("1");
     const [userWillSearch, setUserWillSearch] = useState(false);
@@ -65,10 +65,10 @@ function App() {
 
 
                 // just get the next page number to use in Prev - Next buttons spliting at the `=`
-
+                console.log(next)
                 setPages({
-                    prev: String(prev).split("=")[1],
-                    next: String(next).split("=")[1]
+                    prev: page * 1 < 1 || page * 1 > 34 ? page * 1 : (page === "1" ? "1" : page * 1 - 1),
+                    next: page * 1 < 1 || page * 1 > 34 ? page * 1 : (page === "34" ? "1" : page * 1 + 1)
                 });
                 // get array of characters and set them
                 const { results } = information;

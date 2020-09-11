@@ -67,6 +67,9 @@
             @screen lg {
                 @apply text-3xl;
             }
+            &:hover{
+                @apply underline;
+            }
         }
         .favorite-button {
             &:focus {

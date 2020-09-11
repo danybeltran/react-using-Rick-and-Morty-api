@@ -31,8 +31,8 @@ export const SingleCharacter = () => {
                 <title>
                     {`${character.name} - Rick&MortyPedia`}
                 </title>
-                <meta property="og:description" content={"Basic information about " + character.name} />
-                <meta property="og:image" content={character.image} />
+                <meta name="description" content={"Basic information about " + character.name} />
+                <meta name="image" content={character.image} />
             </Helmet>
             <div className="single-character p-12 md:flex text-gray-700">
                 <div className="single-character-image md:w-1/2">

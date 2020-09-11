@@ -3,7 +3,7 @@ import { AppContext } from "../../Context";
 import { SearchButton } from "./SearchButton";
 import { SearchInput } from "./SearchInput";
 import { PaginationLink } from "./PaginationLink";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 
 export const Pagination = () => {
 
@@ -11,7 +11,7 @@ export const Pagination = () => {
 
     const { page } = useParams();
 
-    return (
+    return page * 1 < 1 || page * 1 > 34 ? <Redirect to="/characters/page/1" /> : (
         <div className="pagination">
             <SearchButton text="Search" />
             {
