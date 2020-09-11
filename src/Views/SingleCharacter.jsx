@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet";
 
 export const SingleCharacter = ({ testData = {
     origin: {},
-    location: {},
-    episode: []
+    location:{},
+    episode:[]
 } }) => {
 
     const [character, setCharacter] = useState(testData.name ? testData : {
@@ -61,9 +61,6 @@ export const SingleCharacter = ({ testData = {
                         <span className="text-sm">
                             To date, {character.name} appears in {character.episode.length} {character.episode.length === 1 ? "Episode" : "Episodes"}
                         </span>
-                    </p>
-                    <p className="single-character-info-paragraph">
-                        <div class="fb-share-button" data-href={"https://previewer.azamidemika.repl.co/character/" + id} data-layout="button" data-size="small"><a target="_blank" href={"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpreviewer.azamidemika.repl.co%2Fcharacter%2F" + id + "&amp;src=sdkpreparse"} class="fb-xfbml-parse-ignore">Share</a></div>
                     </p>
                 </div>
                 <br />
