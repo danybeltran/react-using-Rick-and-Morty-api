@@ -11,6 +11,7 @@ test("Should render Rick Sanchez character information", () => {
             name="Rick Sanchez"
             episode={["1", "2"]}
             status="Alive"
+            species="Human"
             isFavorite={true}
         />
     );

@@ -25,6 +25,7 @@ exports[`Should render Rick Sanchez character information 1`] = `
         </p>
         <p>
           Species: 
+          Human
         </p>
         <p>
           Episodes: 
